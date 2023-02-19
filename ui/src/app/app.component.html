@@ -1,0 +1,40 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div style="display:flex; justify-content: space-between;">
+      <div class="logo"><img src="../assets/Capture.PNG" width="auto" height="50"></div>
+      <!-- <div><h1>Yvp Youth</h1></div> -->
+      <div>
+        <button *ngIf="service.islogin" nz-button nzType="secondary" nzSize="medium" (click)="navigate('users')">Users</button>
+        &nbsp;
+        <button *ngIf="service.islogin" nz-button nzType="primary" nzSize="medium" (click)="logout()">Logout</button>
+      </div>
+    </div>
+
+  </nz-header>
+  <nz-content>
+
+    <!-- <nz-breadcrumb>
+      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+      <nz-breadcrumb-item>List</nz-breadcrumb-item>
+      <nz-breadcrumb-item>App</nz-breadcrumb-item>
+    </nz-breadcrumb> -->
+    <div class="inner-content">
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+  <nz-footer>
+<div style="display: flex;justify-content: space-around;">
+  <div>
+    <b>Address</b><br>
+   Yerravanipalem village, Kothavalasa Mandal<br>
+    Vizianagaram District, AP 535183
+  </div>
+  <div>
+    <b>Contact us</b><br>
+    Mob: +91 846-404-1124<br>
+    Email: yvpyouth@gmail.com
+  </div>
+</div>
+
+  </nz-footer>
+</nz-layout>

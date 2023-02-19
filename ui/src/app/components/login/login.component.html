@@ -1,0 +1,25 @@
+<div nz-row class="login-main">
+    <div nz-col nzLg="8" nzMd="6"></div>
+    <div nz-col nzLg="8" nzXs="24" nzMd="12">
+        <nz-card style="margin: 30% 0px;border-radius: 20px;" [nzTitle]="extraTemplate">
+            <form nz-row [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="col-md-12">
+                    <label class="form-label">User Name</label>
+                    <input type="text" nz-input formControlName="name" placeholder="John Doe">
+                </div>
+                <br>
+                <div class="col-12">
+                    <label class="form-label">Password</label>
+                    <input nz-input type="password" formControlName="password" placeholder="*******">
+                </div>
+                <br>
+                <button nz-button class="login-form-button login-form-margin" [nzBlock]="true" [nzType]="'primary'">Log
+                    in</button>
+            </form>
+        </nz-card>
+        <ng-template #extraTemplate>
+            <h5 style="text-align: center;">Check-In, Here!</h5>
+        </ng-template>
+    </div>
+    <div nz-col nzLg="8" nzMd="6"></div>
+</div>

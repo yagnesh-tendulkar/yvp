@@ -1,0 +1,49 @@
+
+
+<div nz-row class="login-main">
+    <div nz-col nzLg="8" nzMd="6"></div>
+    <div nz-col nzLg="8" nzXs="24" nzMd="12">
+        <nz-card style="margin: 20% 0px;border-radius: 20px;" [nzTitle]="extraTemplate">
+            <form nz-row [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="col-md-12">
+                    <label class="form-label">Name</label>
+                    <input type="text" nz-input formControlName="name" placeholder="John Doe">
+                </div>
+                <div *ngIf="f.name.touched && f.name.errors" class="error-msg">
+                    <div *ngIf="f.name.errors.required">User Name is required</div>
+                </div>
+                <br>
+                <div class="col-md-12">
+                    <label class="form-label">Email</label>
+                    <input type="email" nz-input formControlName="_id" placeholder="Johndoe@example.com">                       
+                </div>
+                <div *ngIf="f._id.touched && f._id.errors" class="error-msg">
+                    <div *ngIf="f._id.errors.required">Email is required</div>
+                    <div *ngIf="f._id.errors.email">Email must be a valid email address</div>
+                </div><br>
+                <div class="col-12">
+                    <label class="form-label">Phone Number</label>
+                    <input nz-input type="text" minlength="10" maxlength="10" formControlName="phoneNumber" placeholder="(+91)785-547-526">
+                </div> 
+                <br>
+                <div class="col-12">
+                    <label class="form-label">Amount</label>
+                    <input nz-input type="text" minlength="2" maxlength="10" formControlName="amount" placeholder="116">
+                </div> 
+                <div *ngIf="f.phoneNumber.touched && f.phoneNumber.errors" class="error-msg">
+                    <div *ngIf="f.phoneNumber.errors.required">phoneNumber is required</div>
+                    <div *ngIf="f.phoneNumber.errors.pattern">Please enter valid mobile number</div>
+                    <div *ngIf="f.phoneNumber.errors.maxLength">Mobile number should be 10 digit</div>
+                    <!-- <div *ngIf="f.phoneNumber.errors.Ma">Please enter valid mobile number</div> -->
+
+                </div>
+                <br>       
+                <button [disabled]="userForm.invalid" nz-button nzType="primary" type="submit" [nzBlock]="true"> Submit </button>      
+            </form>
+        </nz-card>
+        <ng-template #extraTemplate>
+            <h5 style="text-align: center;">Welcome, Dear customer</h5>
+        </ng-template>
+    </div>
+    <div nz-col nzLg="8" nzMd="6"></div>
+</div>

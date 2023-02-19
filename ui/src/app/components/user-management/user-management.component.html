@@ -1,0 +1,33 @@
+<nz-table [nzTitle]="header" #basicTable [nzData]="users">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of basicTable.data;let i=index" style="background-color: #fff;">
+            <td>{{i+1}} </td>
+            <td>{{data.name}}</td>
+            <td>{{data.phoneNumber}}</td>
+            <td>{{data.amount}}</td>
+        </tr>
+    </tbody>
+
+    <ng-template #header *ngIf="service.islogin">
+
+        <div style="display: flex;justify-content: space-between;">
+            <div>
+                <nz-range-picker [(ngModel)]="search.date" (ngModelChange)="onChange($event)" ></nz-range-picker>
+            </div>
+            <div>
+                <div class="export" >
+                    <a [href]="exportLink" download>Export</a>
+                </div>
+            </div>
+        </div>
+     
+    </ng-template>
+</nz-table>

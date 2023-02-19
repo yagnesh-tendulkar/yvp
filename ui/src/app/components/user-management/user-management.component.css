@@ -1,0 +1,24 @@
+.table-operations {
+    margin-bottom: 16px;
+  }
+
+  .table-operations > button {
+    margin-right: 8px;
+  }
+  [nz-button] {
+    margin-right: 8px;
+    margin-bottom: 12px;
+  }
+
+  nz-button-group [nz-button] {
+    margin-right: 0;
+  }
+  .export{
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 3px;
+  }
+
+  .ant-table{
+    overflow: auto !important;
+  }
